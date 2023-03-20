@@ -188,8 +188,8 @@ Vue.component('socks', {
 
             <button v-on:click="removeFromCart"
               class="btn btn-danger"
-              :disabled="!inStock"
-              :class="{ disabledButton: !inStock }" 
+              :disabled="!inStock && !qtyReached"
+              :class="{ disabledButton: !inStock && !qtyReached}"
               >
             Remove from cart
             </button>
@@ -225,7 +225,8 @@ Vue.component('socks', {
         inStock: true,
         variantImage: 'img/img-socks-stars.jpg',
         variantThumbnail: 'img-thumbnail-stars.jpg',
-        qtyInCart: 0
+        qtyInCart: 0,
+        qtyMax: 5
         },
         {
           variantId: 312,
@@ -236,7 +237,8 @@ Vue.component('socks', {
           inStock: true,
           variantImage: 'img/img-socks-peach.jpg',
           variantThumbnail: 'img-thumbnail-peach.jpg',
-          qtyInCart: 0
+          qtyInCart: 0,
+          qtyMax: 25
         },
         {
           variantId: 313,
@@ -247,17 +249,28 @@ Vue.component('socks', {
           inStock: false,
           variantImage: 'img/img-socks-apple.jpg',
           variantThumbnail: 'img-thumbnail-apple.jpg',
-          qtyInCart: 0
+          qtyInCart: 0,
+          qtyMax: 0
         },
       ]
     }
   },
   methods: {
     addToCart: function () {
-      this.$emit('add-to-cart', this.socks[this.selectedVariant].variantId)
+      if(this.socks[this.selectedVariant].variantQty > 0) {
+        this.$emit('add-to-cart', this.socks[this.selectedVariant].variantId)
+        this.socks[this.selectedVariant].variantQty -= 1;
+        console.log("Added to cart. Qty Left: " + this.socks[this.selectedVariant].variantQty)
+      }
+      // this.$emit('add-to-cart', this.socks[this.selectedVariant].variantId)
     },
     removeFromCart: function() {
-      this.$emit('remove-from-cart', this.socks[this.selectedVariant].variantId)
+      if(this.socks[this.selectedVariant].variantQty < this.socks[this.selectedVariant].qtyMax) {
+        this.$emit('remove-from-cart', this.socks[this.selectedVariant].variantId)
+        this.socks[this.selectedVariant].variantQty += 1;
+        console.log("Removed from cart. Qty Left: " + this.socks[this.selectedVariant].variantQty)
+      }
+      // this.$emit('remove-from-cart', this.socks[this.selectedVariant].variantId)
     },
     updateProduct: function (index) {
       this.selectedVariant = index
@@ -273,6 +286,9 @@ Vue.component('socks', {
     },
     inStock() {
       return this.socks[this.selectedVariant].variantQty;
+    },
+    qtyReached() {
+      return this.socks[this.selectedVariant].qtyMax;
     },
     price() {
       return this.socks[this.selectedVariant].price;
@@ -317,8 +333,8 @@ Vue.component('hats', {
 
             <button v-on:click="removeFromCart"
               class="btn btn-danger"
-              :disabled="!inStock"
-              :class="{ disabledButton: !inStock }" 
+              :disabled="!inStock && !qtyReached"
+              :class="{ disabledButton: !inStock && !qtyReached}"
               >
             Remove from cart
             </button>
@@ -354,7 +370,8 @@ Vue.component('hats', {
           inStock: true,
           variantImage: 'img/img-hats-peach.jpg',
           variantThumbnail: 'img-thumbnail-peach.jpg',
-          qtyInCart: 0
+          qtyInCart: 0,
+          qtyMax: 25
         },
         {
           variantId: 213,
@@ -365,7 +382,8 @@ Vue.component('hats', {
           inStock: false,
           variantImage: 'img/img-hats-apple.jpg',
           variantThumbnail: 'img-thumbnail-apple.jpg',
-          qtyInCart: 0
+          qtyInCart: 0,
+          qtyMax: 0
         },
         {
         variantId: 212,
@@ -376,17 +394,28 @@ Vue.component('hats', {
         inStock: true,
         variantImage: 'img/img-hats-stars.jpg',
         variantThumbnail: 'img-thumbnail-stars.jpg',
-        qtyInCart: 0
+        qtyInCart: 0,
+        qtyMax: 5
         },
       ]
     }
   },
   methods: {
     addToCart: function () {
-      this.$emit('add-to-cart', this.hats[this.selectedVariant].variantId)
+      if(this.hats[this.selectedVariant].variantQty > 0) {
+        this.$emit('add-to-cart', this.hats[this.selectedVariant].variantId)
+        this.hats[this.selectedVariant].variantQty -= 1;
+        console.log("Added to cart. Qty Left: " + this.hats[this.selectedVariant].variantQty)
+      }
+      // this.$emit('add-to-cart', this.hats[this.selectedVariant].variantId)
     },
     removeFromCart: function() {
-      this.$emit('remove-from-cart', this.hats[this.selectedVariant].variantId)
+      if(this.hats[this.selectedVariant].variantQty < this.hats[this.selectedVariant].qtyMax) {
+        this.$emit('remove-from-cart', this.hats[this.selectedVariant].variantId)
+        this.hats[this.selectedVariant].variantQty += 1;
+        console.log("Removed from cart. Qty Left: " + this.hats[this.selectedVariant].variantQty)
+      }
+      // this.$emit('remove-from-cart', this.hats[this.selectedVariant].variantId)
     },
     updateProduct: function (index) {
       this.selectedVariant = index
@@ -402,6 +431,9 @@ Vue.component('hats', {
     },
     inStock() {
       return this.hats[this.selectedVariant].variantQty;
+    },
+    qtyReached() {
+      return this.hats[this.selectedVariant].qtyMax;
     },
     price() {
       return this.hats[this.selectedVariant].price;
