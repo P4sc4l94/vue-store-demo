@@ -1,5 +1,10 @@
+html {
+  background-color: #f2f2f2;
+}
 body {
   height: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 // header {
@@ -160,3 +165,23 @@ footer {
 // @media screen and (min-width: 768px) {
 //   .item-cards{ display: inline-block; }
 // }
+.mobile-header {
+  display: block;
+}
+
+.carousel-container {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .mobile-header {
+    display: none;
+  }
+
+  .carousel-container {
+    background-color: steelblue;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
