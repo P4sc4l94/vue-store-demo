@@ -473,11 +473,11 @@ Vue.component('product-review', {
     <div>
       <label for="rating" class="form-label">Rating (out of 5):</label><br>
       <select id="rating" class="form-select" v-model.number="rating" style="width:12rem">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
+        <option value="1">&#9733;</option>
+        <option value="2">&#9733;&#9733;</option>
+        <option value="3">&#9733;&#9733;&#9733;</option>
+        <option value="4">&#9733;&#9733;&#9733;&#9733;</option>
+        <option value="5">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
       </select>
     </div>
     <button type="Submit" class="btn btn-dark mt-3" value="Submit">Submit</button>

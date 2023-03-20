@@ -16,6 +16,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@700&display=swap" rel="stylesheet"> 
 
+  <!-- FONT AWESOME -->
+  <script src="https://kit.fontawesome.com/7334f54e3a.js" crossorigin="anonymous"></script>
+
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -129,7 +132,8 @@
               <div class="card-body">
                 <p class="card-text text-muted"><small>{{ review.date }}</small></p>
                 <h5 class="card-title mt-2" style="color:steelblue">{{ review.name }}</h5>
-                <p class="card-text mb-2"><b>Rating: {{ review.rating }}/5</b></p>
+                <!-- <p class="card-text mb-2"><b>Rating: {{ review.rating }}/5</b></p> -->
+                <p><span v-for="reviews in review.rating" class="text-warning">&#9733;</span> <span class="text-muted"><small>{{ review.rating }}/5</small></span></p>
                 <p><i> {{review.review}} </i></p>
               </div>
             </div>
