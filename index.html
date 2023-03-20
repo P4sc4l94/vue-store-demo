@@ -50,17 +50,45 @@
       </div>
     </nav>
     <header>
-      <!-- Modal -->
-      
-    </header>
-    <main>
-      <!-- <click-counter></click-counter> -->
       <section class="container-fluid pb-3">
         <div class="row text-center">
           <h1 class="mt-5">Apparel</h1>
           <p class="lead fs-4 text-muted col-8 mt-3 mx-auto">Welcome to our shop! We'd be happy if you checked out our fabulous apparel line! Feel free to leave us a review while you're here!</p>
         </div>
+        <div class="row container text-center mx-auto">
+        <div class="col-md-4">
+          <div class="card">
+            <img v-bind:src=`${shirts[0].variantImage}` class="card-img-top img-fluid products-img-menu" alt="A Koda brand shirt with an apple pattern">
+            <div class="card-body">
+              <h5 class="card-title mt-2">Koda Shirts</h5>
+              <a href="#shirts" class="btn btn-outline-dark" title="View more details about Koda shirts">View Item Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img v-bind:src=`${socks[0].variantImage}` class="card-img-top img-fluid products-img-menu" alt="Allie brand socks with a star pattern">
+            <div class="card-body">
+              <h5 class="card-title mt-2">Allie Socks</h5>
+              <a href="#socks" class="btn btn-outline-dark" title="View more details about Allie socks">View Item Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img v-bind:src=`${hats[0].variantImage}` class="card-img-top img-fluid products-img-menu" alt="A Bryn brand hat with a peach pattern">
+            <div class="card-body">
+              <h5 class="card-title mt-2">Bryn Hats</h5>
+              <a href="#hats" class="btn btn-outline-dark" title="View more details about Bryn hats">View Item Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
       </section>
+    </header>
+    <main>
+      <!-- <click-counter></click-counter> -->
+      
       <!--
         SHIRTS SECTION
       -->
