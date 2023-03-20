@@ -17,7 +17,7 @@ Vue.component('shirts', {
       </div>
   
       <div class="col-md-4 mx-auto product-info">
-        <h2>{{title}}</h2>
+        <h2 class="mt-3">{{title}}</h2>
         <p v-if="inStock" class="pb-0 mb-1">In Stock</p>
           <p v-else class="pb-0 mb-1"><span style="color:red">Cannot Add Item</span></p>
           <p>Qty. Available: {{shirts[selectedVariant].variantQty}}</p>

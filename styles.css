@@ -114,7 +114,7 @@ footer {
   bottom: 0;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .product-img-container {
     text-align: center;
   }
@@ -148,4 +148,15 @@ footer {
   .reviews-subhead {
     text-align: center;
   }
+
+  .item-cards {
+    display: none;
+  }
 }
+
+// .item-cards {
+//   display: none;
+// }
+// @media screen and (min-width: 768px) {
+//   .item-cards{ display: inline-block; }
+// }
