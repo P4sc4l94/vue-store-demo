@@ -19,7 +19,7 @@ Vue.component('shirts', {
       <div class="col-md-4 mx-auto product-info">
         <h2>{{title}}</h2>
         <p v-if="inStock" class="pb-0 mb-1">In Stock</p>
-          <p v-else class="pb-0 mb-1"><span style="color:red">Out of Stock</span></p>
+          <p v-else class="pb-0 mb-1"><span style="color:red">Cannot Add Item</span></p>
           <p>Qty. Available: {{shirts[selectedVariant].variantQty}}</p>
         <p class="mb-1 pb-1 fs-5" style="color:steelblue"><b>$ {{ shirts[selectedVariant].price }}</b></p>
   
@@ -164,7 +164,7 @@ Vue.component('socks', {
     <div class="col-md-4 mx-auto product-info">
       <h2 class="mt-3">{{title}}</h2>
       <p v-if="inStock" class="pb-0 mb-1">In Stock</p>
-        <p v-else class="pb-0 mb-1"><span style="color:red">Out of Stock</span></p>
+        <p v-else class="pb-0 mb-1"><span style="color:red">Cannot Add Item</span></p>
       <p>Qty. Available: {{socks[selectedVariant].variantQty}}</p>
       <p class="mb-1 pb-1 fs-5" style="color:steelblue"><b>$ {{ socks[selectedVariant].price }}</b></p>
 
@@ -310,7 +310,7 @@ Vue.component('hats', {
     <div class="col-md-4 mx-auto product-info">
       <h2 class="my-4">{{title}}</h2>
       <p v-if="inStock" class="pb-0 mb-1">In Stock</p>
-        <p v-else class="pb-0 mb-1"><span style="color:red">Out of Stock</span></p>
+        <p v-else class="pb-0 mb-1"><span style="color:red">Cannot Add Item</span></p>
       <p>Qty. Available: {{hats[selectedVariant].variantQty}}</p>
       <p class="mb-1 pb-1 fs-5" style="color:steelblue"><b>$ {{ price }}</b></p>
 
