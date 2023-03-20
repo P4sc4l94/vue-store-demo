@@ -1,0 +1,151 @@
+body {
+  height: 100%;
+}
+
+header {
+  background-color: steelblue;
+  height: 100px;
+}
+
+h1 {
+  font-size: 4.5rem;
+  color: steelblue;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Josefin Slab", serif;
+}
+
+.cart-nav-btn {
+  /* float: right; */
+  background-color: steelblue;
+  padding: 8px 10px;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  /* z-index: 1; */
+  border: none;
+}
+
+.cart-nav-btn:hover,
+.cart-nav-btn:active {
+  background-color: rgb(56, 105, 145);
+}
+
+main {
+  /* background-color: skyblue; */
+  height: auto;
+}
+
+section {
+  /* background-color: bisque; */
+  height: auto;
+}
+div {
+  /* background-color: coral; */
+  height: auto;
+}
+
+.products-img-menu {
+  width: 100%;
+}
+
+.product-img {
+  width: 80%;
+}
+
+.img-thumbnail {
+  width: 3rem;
+  height: 3rem;
+  min-width: 40px;
+  margin-right: 10px;
+  border-radius: 100%;
+  transition: box-shadow 0.25s;
+}
+
+.img-thumbnail:hover {
+  /* border: 2px solid rgb(46, 107, 156); */
+  /* box-shadow: rgba(0, 73, 122, 0.35) 1px 5px 15px; */
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(46, 107, 156) 0px 0px 0px 3px;
+  cursor: pointer;
+}
+
+.img-thumbnail:active {
+  /* border: 2px solid steelblue; */
+  /* box-shadow: rgba(0, 73, 122, 0.35) 1px 5px 15px; */
+  box-shadow: rgba(46, 107, 156, 0.16) 0px 1px 4px, gold 0px 0px 0px 3px;
+}
+
+ul,
+li {
+  list-style-type: none;
+  list-style-position: inside;
+  margin: 0;
+  padding: 0;
+}
+
+.blue-break {
+  border-bottom: 7px groove steelblue;
+}
+
+.review-container {
+  background-color: rgb(53, 105, 148);
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(0, 152, 155, 1) 0.1%,
+    rgba(0, 94, 120, 1) 94.2%
+  );
+}
+
+.review-cards {
+  width: 90%;
+  box-shadow: 5px 5px 8px 2px rgba(0, 0, 0, 0.4);
+}
+
+footer {
+  height: 75px;
+  position: relative;
+  bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .product-img-container {
+    text-align: center;
+  }
+
+  .product-info {
+    text-align: center;
+  }
+
+  h3 {
+    text-align: center;
+  }
+
+  ul,
+  li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  ul,
+  li:last-of-type {
+    margin-right: 0;
+  }
+
+  .img-thumbnail {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto;
+    border-radius: 100%;
+  }
+
+  .reviews-subhead {
+    text-align: center;
+  }
+}
